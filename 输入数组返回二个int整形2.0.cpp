@@ -31,11 +31,11 @@ void aff(int arr[],int sz,int*px,int*py)
 			*py = arr[a + 1]; return;
 		}
 		else {
-			a=a + 2;
+			a=a + 3;
 			for (a; a < sz - 1; a=a+2) {
 				if(arr[a]!=arr[a+1])
 				{
-					*py = arr[a + 1]; return;
+					*py = arr[a ]; return;
 				}
 
 }
