@@ -20,15 +20,16 @@ func main() {
 		print("\n")
 	}
 	print("\n")
+
 	g := 0
-	fmt.Scanf("%d", g)
+	fmt.Scanf("%d", &g)
 	print("\n")
-	for g <= 3 {
+	for g != 0 {
 		q := rand.Int63n(3)
 		w := rand.Int63n(3)
 		if (q != 1) || (w != 1) && a[q][w] == "*" {
 			a[q][w] = " "
-			g++
+			g--
 		}
 	}
 
