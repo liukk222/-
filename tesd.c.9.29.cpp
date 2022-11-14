@@ -14,7 +14,7 @@ void prints(char as[10], char bs[10])
 	}
 
 }
-
+//zHen4XiaNg@/.lIu5 9#3200@522$
 
 void print(char as[10], char bs[10])
 {
