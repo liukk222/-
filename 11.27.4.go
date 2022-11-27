@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"io"
 	"strings"
 )
 
@@ -58,9 +59,58 @@ func testJoin() {
 	fmt.Println(string(bytes.Join(s2, sep5)))
 }
 
+func testBuffer3() {
+	var b = bytes.NewBufferString("hello world")
+	b1 := make([]byte, 2)
+	for {
+		n, err := b.Read(b1)
+		if err == io.EOF {
+			break
+		}
+		fmt.Printf("n: %v\n", n)
+		fmt.Printf("string(b1[0:n]): %v\n", string(b1[0:n]))
+	}
+}
+
+func testBuffer() {
+	var b bytes.Buffer
+	fmt.Printf("b: %v\n", b)
+	var b1 = bytes.NewBufferString("hello")
+	fmt.Printf("b1: %v\n", b1)
+	var b2 = bytes.NewBuffer([]byte("hello"))
+	fmt.Printf("b2: %v\n", b2)
+}
+
+func testBuffer2() {
+	var b bytes.Buffer
+	n, err := b.WriteString("hello")
+	if err != nil {
+		fmt.Printf("err: %v\n", err)
+	}
+	fmt.Printf("b.Bytes()[0:n]: %v\n", string(b.Bytes()[0:n]))
+}
+
+func testBuffer4() {
+	var b = bytes.NewBufferString("hello wolrd")
+	b1 := make([]byte, 2)
+	for {
+		n, err := b.Read(b1)
+		if err == io.EOF {
+			break
+		}
+		fmt.Printf("n: %v\n", n)
+		fmt.Printf("b1: %v\n", string(b1)[0:n])
+	}
+
+}
+
 func main() {
 	//testRepeat()
 	//testCount()
-	testJoin()
+	//testJoin()
 	//testRunes()
+	//testBuffer3()
+	//testBuffer()
+	//testBuffer2()
+	testBuffer4()
 }
