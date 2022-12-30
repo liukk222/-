@@ -1,4 +1,4 @@
-/* package main
+package main
 
 import "fmt"
 
@@ -43,4 +43,3 @@ func main() {
 	c := Newjiacu(b)
 	c.test1()
 }
-*/
