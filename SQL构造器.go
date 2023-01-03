@@ -13,7 +13,7 @@ import (
 var db *gorm.DB
 
 func init() {
-	dsn := "root:2003925liu@tcp(127.0.0.1:3306)/golang_db?charset=utf8mb4&parseTime=True"
+	dsn := "root:123456@tcp(127.0.0.1:3306)/golang_db?charset=utf8mb4&parseTime=True"
 	d, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
