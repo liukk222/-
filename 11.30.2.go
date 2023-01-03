@@ -10,7 +10,7 @@ import (
 var db *sql.DB
 
 func initDB() (err error) {
-	dsn := "root:2003925liu@tcp(127.0.0.1:3306)/go_db?charset=utf8mb4&parseTime=True"
+	dsn := "root:123456@tcp(127.0.0.1:3306)/go_db?charset=utf8mb4&parseTime=True"
 	// 不会校验账号密码是否正确
 	// 注意！！！这里不要使用:=，我们是给全局变量赋值，然后在main函数中使用全局变量db
 	db, err = sql.Open("mysql", dsn)

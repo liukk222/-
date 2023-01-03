@@ -8,10 +8,11 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("mysql", "root:2003925liu@/go_db")
+	db, err := sql.Open("mysql", "root:123456@/go_db")
 	if err != nil {
 		panic(err)
 	}
+	print(db)
 	// See "Important settings" section.
 	db.SetConnMaxLifetime(time.Minute * 3)
 	db.SetMaxOpenConns(10)
